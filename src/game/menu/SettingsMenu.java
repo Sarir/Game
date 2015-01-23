@@ -109,6 +109,7 @@ public class SettingsMenu {
 				} else if(selectedItem[1]){
 					
 				} else if(selectedItem[2]){ // Назад
+					Settings.CurrentScreen = "MainMenu";
 					MainMenu menu = new MainMenu(screen);
 				}
 			}
