@@ -72,7 +72,7 @@ public class MainMenu {
 		drawMenu(screen);
 	}
 
-	private static void setPos(String key, Screen screen) {
+	public static void setPos(String key, Screen screen) {
 		if(Settings.CurrentScreen.equalsIgnoreCase("MainMenu")){
 			if(key.equalsIgnoreCase("ArrowUp")){
 				for(int i = 0;i<logic.length;i++){
@@ -117,7 +117,8 @@ public class MainMenu {
 					Settings.CurrentScreen = "SettingMenu";
 					SettingsMenu menu = new SettingsMenu(screen);
 				} else if(logic[2]){
-					
+					MenuAuthors menu = new MenuAuthors(0, screen, 0, "");
+					Settings.CurrentScreen = menu.getDefaultId();
 				} else if(logic[3]){ // Выход
 					screen.stopScreen();
 					System.exit(0);

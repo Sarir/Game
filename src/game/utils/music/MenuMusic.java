@@ -6,8 +6,9 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.Player;
+import javazoom.jl.player.advanced.AdvancedPlayer;
 
 public class MenuMusic extends Thread{
 	@Override
@@ -19,7 +20,7 @@ public class MenuMusic extends Thread{
 			File file = new File(resource);
 			FileInputStream fis = new FileInputStream(file);
 			BufferedInputStream bis = new BufferedInputStream(fis);
-			Player player = new Player(bis);
+			AdvancedPlayer player = new AdvancedPlayer(bis);
 			player.play();
 		} catch (URISyntaxException | JavaLayerException | FileNotFoundException e1) {
 			e1.printStackTrace();
