@@ -70,7 +70,6 @@ public class MainMenu {
 		th.start();
 		
 		drawMenu(screen);
-		startMusic();
 	}
 
 	private static void setPos(String key, Screen screen) {

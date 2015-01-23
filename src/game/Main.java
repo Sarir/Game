@@ -14,5 +14,6 @@ public class Main {
 		screen.updateScreenSize();
 		screen.startScreen();
 		MainMenu mainMenu = new MainMenu(screen);
+		mainMenu.startMusic();
 	}
 }
