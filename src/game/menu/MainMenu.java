@@ -10,7 +10,7 @@ public class MainMenu {
 	
 	private static screenUtils su = new screenUtils();
 	
-	private Thread music = new MenuMusic();
+	private static Thread music = new MenuMusic();
 	
 	private String[] mainMenu = new String[11];
 	
@@ -21,10 +21,10 @@ public class MainMenu {
 		mainMenu[0] =  "┌────────────────────────────────────────────────┐";
 		mainMenu[1] =  "│                 ГЛАВНОЕ МЕНЮ                   │";
 		mainMenu[2] =  "│────────────────────────────────────────────────│";
-		mainMenu[3] =  "│             [x]  ИГРАТЬ                        │";// 14 3
-		mainMenu[4] =  "│             [ ]  НАСТРОЙКИ                     │";// 14 4
-		mainMenu[5] =  "│             [ ]  РАЗРАБОТЧИКИ                  │";// 14 5
-		mainMenu[6] =  "│             [ ]  ВЫХОД                         │";// 14 6
+		mainMenu[3] =  "│             [x]  ИГРАТЬ                        │";// 15 3
+		mainMenu[4] =  "│             [ ]  НАСТРОЙКИ                     │";// 15 4
+		mainMenu[5] =  "│             [ ]  РАЗРАБОТЧИКИ                  │";// 15 5
+		mainMenu[6] =  "│             [ ]  ВЫХОД                         │";// 15 6
 		mainMenu[7] =  "│                                                │";
 		mainMenu[8] =  "│────────────────────────────────────────────────│";
 		mainMenu[9] =  "│   Управление: Вниз Вверх Ввод                  │";
@@ -71,7 +71,7 @@ public class MainMenu {
 		th.start();
 		
 		drawMenu(screen);
-		//startMusic();
+		startMusic();
 	}
 
 	private static void setPos(String key, Screen screen) {
@@ -111,6 +111,17 @@ public class MainMenu {
 					}	
 				}
 			}
+		} else if(key.equalsIgnoreCase("Enter")){
+			if(logic[0]){
+
+			} else if(logic[1]){
+				SettingsMenu menu = new SettingsMenu(screen);
+			} else if(logic[2]){
+				
+			} else if(logic[3]){ // Выход
+				screen.stopScreen();
+				System.exit(0);
+			}
 		}
 	}
 	
@@ -124,7 +135,7 @@ public class MainMenu {
 		music.start();
 	}
 	
-	public void stopMuisc(){
+	public static void stopMuisc(){
 		music.stop();
 	}
 }
