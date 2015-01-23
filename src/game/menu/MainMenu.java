@@ -19,17 +19,17 @@ public class MainMenu {
 	static boolean[] logic = new boolean[4];
 	
 	public MainMenu(final Screen screen){
-		mainMenu[0] =  "в”Њв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”ђ";
-		mainMenu[1] =  "в”‚                 Р“Р›РђР’РќРћР• РњР•РќР®                   в”‚";
-		mainMenu[2] =  "в”‚в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”‚";
-		mainMenu[3] =  "в”‚             [x]  Р�Р“Р РђРўР¬                        в”‚";// 15 3
-		mainMenu[4] =  "в”‚             [ ]  РќРђРЎРўР РћР™РљР�                     в”‚";// 15 4
-		mainMenu[5] =  "в”‚             [ ]  Р РђР—Р РђР‘РћРўР§Р�РљР�                  в”‚";// 15 5
-		mainMenu[6] =  "в”‚             [ ]  Р’Р«РҐРћР”                         в”‚";// 15 6
-		mainMenu[7] =  "в”‚                                                в”‚";
-		mainMenu[8] =  "в”‚в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”‚";
-		mainMenu[9] =  "в”‚   РЈРїСЂР°РІР»РµРЅРёРµ: Р’РЅРёР· Р’РІРµСЂС… Р’РІРѕРґ                  в”‚";
-		mainMenu[10] = "в””в”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”Ђв”�";
+		mainMenu[0] =  "┌────────────────────────────────────────────────┐";
+		mainMenu[1] =  "│                 ГЛАВНОЕ МЕНЮ                   │";
+		mainMenu[2] =  "│────────────────────────────────────────────────│";
+		mainMenu[3] =  "│             [x]  ИГРАТЬ                        │";// 15 3
+		mainMenu[4] =  "│             [ ]  НАСТРОЙКИ                     │";// 15 4
+		mainMenu[5] =  "│             [ ]  РАЗРАБОТЧИКИ                  │";// 15 5
+		mainMenu[6] =  "│             [ ]  ВЫХОД                         │";// 15 6
+		mainMenu[7] =  "│                                                │";
+		mainMenu[8] =  "│────────────────────────────────────────────────│";
+		mainMenu[9] =  "│   Управление: Вниз Вверх Ввод                  │";
+		mainMenu[10] = "└────────────────────────────────────────────────┘";
 		
 		coord[0][0] = 15; 
 		coord[0][1] = 3;
@@ -51,7 +51,7 @@ public class MainMenu {
 		
 		final boolean keepRunning = true;
 		
-		// РџРµСЂРµРјРµС‰РµРЅРёРµ РїРѕ РїСѓРЅРєС‚Р°Рј
+		// Перемещение по пунктам
 		Runnable runner = new Runnable(){
 			@Override
 			public void run() {
@@ -60,8 +60,6 @@ public class MainMenu {
 					while(key == null){
 						key = screen.readInput();
 					}
-					//screen.setCursorPosition(screen.getCursorPosition().getColumn(), screen.getCursorPosition().getRow());
-					//putString("x", getPos(key.toString())[0], getPos(key.toString())[1], screen);
 					setPos(key.toString(), screen);
 				}
 			}
@@ -121,7 +119,7 @@ public class MainMenu {
 					SettingsMenu menu = new SettingsMenu(screen);
 				} else if(logic[2]){
 					
-				} else if(logic[3]){ // Р’С‹С…РѕРґ
+				} else if(logic[3]){ // Выход
 					screen.stopScreen();
 					System.exit(0);
 				}
