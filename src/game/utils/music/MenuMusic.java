@@ -16,11 +16,10 @@ public class MenuMusic extends Thread{
 		try {
 			sequencer = MidiSystem.getSequencer();
 			sequencer.open();
-			InputStream is = new BufferedInputStream(getClass().getResourceAsStream("/music/menu.mid"));
+			InputStream is = new BufferedInputStream(getClass().getResourceAsStream("/res/music/menu.mid"));
 			sequencer.setSequence(is);
 			sequencer.start();
 		} catch (MidiUnavailableException | IOException | InvalidMidiDataException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

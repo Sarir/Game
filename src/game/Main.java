@@ -1,8 +1,6 @@
 package game;
 
 import game.menu.MainMenu;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
 
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.screen.Screen;
@@ -16,10 +14,5 @@ public class Main {
 		screen.updateScreenSize();
 		screen.startScreen();
 		MainMenu mainMenu = new MainMenu(screen);
-		
-		String bip = "move.mp3";
-		Media hit = new Media(bip);
-		MediaPlayer mediaPlayer = new MediaPlayer(hit);
-		mediaPlayer.play();
 	}
 }
