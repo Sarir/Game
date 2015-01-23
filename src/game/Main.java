@@ -1,7 +1,5 @@
 package game;
 
-import java.io.File;
-
 import game.menu.MainMenu;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
