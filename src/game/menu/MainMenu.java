@@ -55,7 +55,7 @@ public class MainMenu {
 		Runnable runner = new Runnable(){
 			@Override
 			public void run() {
-				while(keepRunning){
+				while(keepRunning && Settings.CurrentScreen.equalsIgnoreCase("MainMenu")){
 					Key key = screen.readInput();
 					while(key == null){
 						key = screen.readInput();

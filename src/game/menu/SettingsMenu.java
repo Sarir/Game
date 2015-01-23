@@ -48,7 +48,7 @@ public class SettingsMenu {
 		Runnable runner = new Runnable(){
 			@Override
 			public void run() {
-				while(keepRunning){
+				while(keepRunning && Settings.CurrentScreen.equalsIgnoreCase("SettingMenu")){
 					Key key = screen.readInput();
 					while(key == null){
 						key = screen.readInput();
