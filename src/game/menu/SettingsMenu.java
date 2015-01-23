@@ -1,6 +1,8 @@
 package game.menu;
 
+import game.Settings;
 import game.utils.screenUtils;
+
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.screen.Screen;
 
@@ -64,49 +66,51 @@ public class SettingsMenu {
 	}
 
 	private static void setPos(String key, Screen screen) {
-		if(key.equalsIgnoreCase("ArrowUp")){
-			for(int i = 0;i<selectedItem.length;i++){
-				if(selectedItem[i]){
-					if(i != 0){
-						selectedItem[i] = false;
-						su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
-						selectedItem[i-1] = true;
-						su.putString("x", menuItems[i-1][0], menuItems[i-1][1], screen);
-						break;
-					} else if(i == 0){
-						selectedItem[i] = false;
-						su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
-						selectedItem[selectedItem.length - 1] = true;
-						su.putString("x", menuItems[selectedItem.length-1][0], menuItems[selectedItem.length-1][1], screen);
-						break;
-					}	
+		if(Settings.CurrentScreen.equalsIgnoreCase("SettingMenu")){
+			if(key.equalsIgnoreCase("ArrowUp")){
+				for(int i = 0;i<selectedItem.length;i++){
+					if(selectedItem[i]){
+						if(i != 0){
+							selectedItem[i] = false;
+							su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
+							selectedItem[i-1] = true;
+							su.putString("x", menuItems[i-1][0], menuItems[i-1][1], screen);
+							break;
+						} else if(i == 0){
+							selectedItem[i] = false;
+							su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
+							selectedItem[selectedItem.length - 1] = true;
+							su.putString("x", menuItems[selectedItem.length-1][0], menuItems[selectedItem.length-1][1], screen);
+							break;
+						}	
+					}
 				}
-			}
-		} else if(key.equalsIgnoreCase("ArrowDown")){
-			for(int i = 0;i<selectedItem.length;i++){
-				if(selectedItem[i]){
-					if(i != selectedItem.length - 1){
-						selectedItem[i] = false;
-						su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
-						selectedItem[i+1] = true;
-						su.putString("x", menuItems[i+1][0], menuItems[i+1][1], screen);
-						break;
-					} else {
-						selectedItem[i] = false;
-						su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
-						selectedItem[0] = true;
-						su.putString("x", menuItems[0][0], menuItems[0][1], screen);
-						break;
-					}	
+			} else if(key.equalsIgnoreCase("ArrowDown")){
+				for(int i = 0;i<selectedItem.length;i++){
+					if(selectedItem[i]){
+						if(i != selectedItem.length - 1){
+							selectedItem[i] = false;
+							su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
+							selectedItem[i+1] = true;
+							su.putString("x", menuItems[i+1][0], menuItems[i+1][1], screen);
+							break;
+						} else {
+							selectedItem[i] = false;
+							su.putString(" ", menuItems[i][0], menuItems[i][1], screen);
+							selectedItem[0] = true;
+							su.putString("x", menuItems[0][0], menuItems[0][1], screen);
+							break;
+						}	
+					}
 				}
-			}
-		} else if(key.equalsIgnoreCase("Enter")){
-			if(selectedItem[0]){
-				
-			} else if(selectedItem[1]){
-				
-			} else if(selectedItem[2]){ // Назад
-				MainMenu menu = new MainMenu(screen);
+			} else if(key.equalsIgnoreCase("Enter")){
+				if(selectedItem[0]){
+					
+				} else if(selectedItem[1]){
+					
+				} else if(selectedItem[2]){ // Назад
+					MainMenu menu = new MainMenu(screen);
+				}
 			}
 		}
 	}
