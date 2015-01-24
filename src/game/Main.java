@@ -1,7 +1,6 @@
 package game;
 
-import game.menu.MainMenu;
-
+import game.menu.MenuMain;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.screen.Screen;
 
@@ -13,7 +12,8 @@ public class Main {
 		screen.getTerminal().getTerminalSize().setRows(11);
 		screen.updateScreenSize();
 		screen.startScreen();
-		MainMenu mainMenu = new MainMenu(screen);
+		MenuMain mainMenu = new MenuMain(screen);
 		mainMenu.startMusic();
+		Settings.CurrentScreen = mainMenu.getDefaultId();
 	}
 }
