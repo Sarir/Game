@@ -18,6 +18,8 @@ public class MainMenu {
 	static int[][] coord = new int[4][2];
 	static boolean[] logic = new boolean[4];
 	
+	public Key pressedKey;
+	
 	public MainMenu(final Screen screen){
 		mainMenu[0] =  "┌────────────────────────────────────────────────┐";
 		mainMenu[1] =  "│                 ГЛАВНОЕ МЕНЮ                   │";
@@ -117,7 +119,7 @@ public class MainMenu {
 					Settings.CurrentScreen = "SettingMenu";
 					SettingsMenu menu = new SettingsMenu(screen);
 				} else if(logic[2]){
-					MenuAuthors menu = new MenuAuthors(0, screen, 0, "");
+					MenuAuthors menu = new MenuAuthors(screen);
 					Settings.CurrentScreen = menu.getDefaultId();
 				} else if(logic[3]){ // Выход
 					screen.stopScreen();
@@ -140,5 +142,9 @@ public class MainMenu {
 	@SuppressWarnings("deprecation")
 	public static void stopMuisc(){
 		music.stop();
+	}
+	
+	public String getPressedKey(){
+		return this.pressedKey.toString();
 	}
 }
