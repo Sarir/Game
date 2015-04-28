@@ -137,4 +137,19 @@ public abstract class Menu {
 		}
 		return "biba";
 	}
+	
+	public void setMenuScreen(
+			String s1, String s2, String s3,  
+			String s4, String s5, String s6, 
+			String s7, String s8, String s9, 
+			String s10, String s11){
+		menu[0] = s1; menu[1] = s2; menu[2] = s3;
+		menu[3] = s4; menu[4] = s5; menu[5] = s6;
+		menu[6] = s7; menu[7] = s8; menu[8] = s9; 
+		menu[9] = s10; menu[10] = s11;
+	}
+	
+	public String[] getScreenString(){
+		return menu;
+	}
 }
